@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- Banner -->
+<header class="banner-home mb-4">
+    <img src="{{ url_for('static', filename='imgs/banner01.png') }}" class="img-fluid w-100" alt="Banner">
+</header>
+
+<!-- Conteúdo da página -->
+<div class="text-center">
+    <h1 class="fw-bold text-white">Bem-vindo à Miura Clothing!</h1>
+    <p class="lead text-white">A melhor loja online de roupas do Vale do Ribeira.</p>
+</div>
+{% endblock %}

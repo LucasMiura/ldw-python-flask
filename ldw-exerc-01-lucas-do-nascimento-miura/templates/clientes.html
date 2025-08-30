@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2 class="mb-4 text-white">Clientes</h2>
+
+<form method="POST" class="row g-2 mb-4">
+    <div class="col-md-3">
+        <input type="text" name="nome" placeholder="Nome" required class="form-control">
+    </div>
+    <div class="col-md-3">
+        <input type="text" name="email" placeholder="Email" required class="form-control">
+    </div>
+    <div class="col-md-2">
+        <input type="text" name="telefone" placeholder="Telefone" required class="form-control">
+    </div>
+    <div class="col-md-2">
+        <input type="text" name="cpf" placeholder="CPF" required class="form-control">
+    </div>
+    <div class="col-md-2">
+        <button type="submit" class="btn btn-success w-100">Adicionar</button>
+    </div>
+</form>
+
+<table class="table table-hover table-striped shadow">
+    <thead class="table-dark">
+        <tr>
+            <th>Nome</th>
+            <th>Email</th>
+            <th>Telefone</th>
+            <th>CPF</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for nome, dados in clientes.items() %}
+            <tr>
+                <td>{{ nome }}</td>
+                <td>{{ dados.email }}</td>
+                <td>{{ dados.telefone }}</td>
+                <td>{{ dados.cpf }}</td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4" class="text-muted text-center">Nenhum cliente cadastrado.</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
