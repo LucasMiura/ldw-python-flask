@@ -1,7 +1,7 @@
 from flask import Flask
 from controllers import routes
 
-app = Flask(__name__, template_folder="templates", static_folder="static")
+app = Flask(__name__, template_folder="views")
 
 # inicializa as rotas
 routes.init_app(app)

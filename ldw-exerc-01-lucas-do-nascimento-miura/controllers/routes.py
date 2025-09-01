@@ -1,8 +1,9 @@
 from flask import render_template, request, redirect, url_for
-from models.produtos import produtos
-from models.clientes import clientes
 
 def init_app(app):
+    produtos = []
+    clientes = []
+
     # Página inicial
     @app.route("/")
     def index():
@@ -26,11 +27,14 @@ def init_app(app):
             email = request.form.get("email")
             telefone = request.form.get("telefone")
             cpf = request.form.get("cpf")
+
             if nome and email and telefone and cpf:
-                clientes[nome] = {
+                clientes.append({
+                    "nome": nome,
                     "email": email,
                     "telefone": telefone,
                     "cpf": cpf
-                }
-            return redirect(url_for("page_clientes"))
+                })
+                return redirect(url_for("page_clientes"))
+
         return render_template("clientes.html", clientes=clientes)

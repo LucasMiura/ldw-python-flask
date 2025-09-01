@@ -15,8 +15,16 @@ body, .body-background {
 }
 
 /* Banner */
+.banner-home {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
 .banner-home img {
-    object-fit: cover;
+    width: 100%;
+    height: auto;
+    display: block; /* remove espaçamento do inline */
 }
 
 /* Navbar */
