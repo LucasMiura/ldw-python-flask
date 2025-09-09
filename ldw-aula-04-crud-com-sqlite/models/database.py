@@ -12,11 +12,11 @@ class Game(db.Model):
     price = db.Column(db.Float)
     quantity = db.Column(db.Integer)
     
-# Método construtor da classe
-def __init__(self, title, year, category, platform, price, quantity):
-    self.title = title
-    self.year = year
-    self.category = category
-    self.platform = platform
-    self.price = price
-    self.quantity = quantity
+    # Método construtor da classe
+    def __init__(self, title, year, category, platform, price, quantity):
+        self.title = title
+        self.year = year
+        self.category = category
+        self.platform = platform
+        self.price = price
+        self.quantity = quantity
