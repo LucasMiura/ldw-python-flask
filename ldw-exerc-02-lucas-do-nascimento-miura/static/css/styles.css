@@ -1,0 +1,72 @@
+/* Fonte e cores */
+body, .body-background {
+    font-family: "Poppins", sans-serif;
+    color: #ffffff;
+    background-color: black;
+}
+
+/* Background global */
+.body-background {
+    background-image: url('../imgs/background02.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* Banner */
+.banner-home {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.banner-home img {
+    width: 100%;
+    height: auto;
+    display: block; /* remove espaçamento do inline */
+}
+
+/* Navbar */
+.navbar-nav .nav-link {
+    color: #ffffff !important;
+}
+
+/* Hover navbar */
+.navbar-nav .nav-item:hover {
+    font-weight: bold;
+}
+
+/* Main */
+main {
+    flex: 1;
+}
+
+/* Footer */
+footer {
+    background-color: #161616;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* Tables e listas */
+.table, .list-group {
+    background-color: #1a1a1a;
+}
+
+.table-hover tbody tr:hover {
+    background-color: #4b4b4b;
+}
+
+
+main {
+    flex: 1; /* faz o main ocupar o espaço disponível, empurrando o footer para baixo */
+}
+
+footer {
+    background-color: #161616;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
