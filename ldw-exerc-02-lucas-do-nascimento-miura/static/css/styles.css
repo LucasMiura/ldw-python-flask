@@ -39,7 +39,7 @@ body, .body-background {
 
 /* Main */
 main {
-    flex: 1;
+    flex: 1; /* faz o main ocupar o espaço disponível, empurrando o footer para baixo */
 }
 
 /* Footer */
@@ -57,16 +57,4 @@ footer {
 
 .table-hover tbody tr:hover {
     background-color: #4b4b4b;
-}
-
-
-main {
-    flex: 1; /* faz o main ocupar o espaço disponível, empurrando o footer para baixo */
-}
-
-footer {
-    background-color: #161616;
-    color: #fff;
-    text-align: center;
-    padding: 20px 0;
 }

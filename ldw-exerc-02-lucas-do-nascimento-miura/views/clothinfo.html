@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="row align-items-center">
+        <!-- Imagem -->
+        <div class="col-md-6 text-center">
+            <img src="{{ clothInfo.image }}" class="img-fluid shadow-sm rounded p-3"
+                 alt="{{ clothInfo.title }}"
+                 style="max-height: 400px; object-fit: contain;">
+        </div>
+
+        <!-- Detalhes -->
+        <div class="col-md-6">
+            <h2 class="fw-bold">{{ clothInfo.title }}</h2>
+            <p class="text-muted">{{ clothInfo.category }}</p>
+            <h3 class="text-success fw-semibold mb-3">R$ {{ clothInfo.price }}</h3>
+            
+            {% if clothInfo.description %}
+            <p class="mb-4">{{ clothInfo.description }}</p>
+            {% endif %}
+
+            <div class="d-flex gap-3">
+                <a href="{{ url_for('apiclothes') }}" class="btn btn-outline-secondary px-4">Voltar</a>
+                <a href="#" class="btn btn-dark px-4">Adicionar ao Carrinho</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
