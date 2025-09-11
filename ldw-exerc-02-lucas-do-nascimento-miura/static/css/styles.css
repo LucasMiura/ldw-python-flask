@@ -58,3 +58,14 @@ footer {
 .table-hover tbody tr:hover {
     background-color: #4b4b4b;
 }
+
+/* Dando contraste ao conteúdo principal */
+.content-wrapper {
+    background: linear-gradient(135deg, #1c1c1c, #2e2e2e); /* cinza escuro gradiente */
+    color: #f5f5f5; /* fonte clara para contraste */
+    padding: 30px;
+    border-radius: 16px;
+    margin: 20px auto;
+    max-width: 1200px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
