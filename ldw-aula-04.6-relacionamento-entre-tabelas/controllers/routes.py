@@ -81,6 +81,8 @@ def init_app(app):
             g.categoria = request.form['categoria']
             g.preco = request.form['preco']
             g.quantidade = request.form['quantidade']
+            #Alterando o Console
+            g.console_id = request.form['console']
             db.session.commit()
             return redirect(url_for('gamesEstoque'))
         # SELECIONANDO OS CONSOLES

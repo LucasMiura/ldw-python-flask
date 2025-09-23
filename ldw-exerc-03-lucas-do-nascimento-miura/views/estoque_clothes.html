@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h2 class="text-center mt-4">Controle de Estoque - Streetwear</h2>
+<hr class="mb-4">
+
+<!--------- Cadastro --------->
+<details class="mb-5">
+    <summary class="fw-bold">[ Adicionar Roupa ]</summary>
+    <div class="col-md-6 mt-3">
+        <form action="{{url_for('estoque_clothes')}}" method="POST" class="p-3 rounded shadow bg-light">
+            <input type="text" name="title" placeholder="Nome da roupa" class="form-control mb-2" required>
+            <input type="text" name="category" placeholder="Categoria (ex: camiseta, jaqueta)" class="form-control mb-2" required>
+            <input type="number" step="0.01" name="price" placeholder="Preço" class="form-control mb-2" required>
+            <input type="number" name="quantity" placeholder="Quantidade" class="form-control mb-3" required>
+            <input type="url" name="image" placeholder="URL da imagem" class="form-control mb-3">
+
+            <div class="d-flex justify-content-between">
+                <input type="submit" value="Cadastrar" class="btn btn-dark w-50 me-2">
+                <input type="reset" value="Limpar" class="btn btn-outline-danger w-50">
+            </div>
+        </form>
+    </div>
+</details>
+
+<!--------- Estoque em Cards --------->
+<div class="row">
+    {% for cloth in clothesEstoque %}
+    <div class="col-md-4 mb-4">
+        <div class="card h-100 shadow-sm border-0">
+            <img src="{{cloth.image}}" class="card-img-top p-3" alt="{{cloth.title}}" style="max-height: 250px; object-fit: contain;">
+            <div class="card-body text-center">
+                <h5 class="card-title fw-bold">{{cloth.title}}</h5>
+                <p class="text-muted">{{cloth.category}}</p>
+                <p class="fs-5 fw-semibold">R$ {{cloth.price}}</p>
+                <p class="badge bg-dark">Estoque: {{cloth.quantity}}</p>
+            </div>
+            <div class="card-footer d-flex justify-content-around">
+                <a href="{{url_for('edit_cloth', id=cloth.id)}}">
+                    <button class="btn btn-warning btn-sm">Editar</button>
+                </a>
+                <a href="{{url_for('estoque_clothes', id=cloth.id)}}" 
+                   onclick="return confirm('Deseja mesmo excluir {{cloth.title}}?')">
+                    <button class="btn btn-danger btn-sm">Excluir</button>
+                </a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock content %}
